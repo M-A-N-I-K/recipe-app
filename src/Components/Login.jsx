@@ -12,7 +12,6 @@ export default function login() {
 	const navigate = useNavigate();
 
 	const onSubmit = async (event) => {
-		console.log("onSubmit Working!");
 		event.preventDefault();
 		try {
 			const response = await axios.post("http://localhost:3000/auth/login", {

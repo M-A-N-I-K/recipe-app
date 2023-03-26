@@ -44,7 +44,7 @@ export default function navbar() {
 				color="blue-gray"
 				className="p-1 font-normal"
 			>
-				<Link to="/createRecipe" className="flex items-center">
+				<Link to="/create-recipe" className="flex items-center">
 					Create Recipe
 				</Link>
 			</Typography>
@@ -54,7 +54,7 @@ export default function navbar() {
 				color="blue-gray"
 				className="p-1 font-normal"
 			>
-				<Link to="/savedRecipe" className="flex items-center">
+				<Link to="/saved-recipe" className="flex items-center">
 					Saved Recipe
 				</Link>
 			</Typography>
