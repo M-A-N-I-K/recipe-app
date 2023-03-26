@@ -7,11 +7,12 @@ import {
 	Textarea,
 } from "@material-tailwind/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGetUserId } from "../hooks/useGetUserId";
-const navigate = useNavigate();
 
 export default function createRecipe() {
+	const navigate = useNavigate();
 	const userID = useGetUserId();
 	const [recipe, setRecipe] = useState({
 		name: "",
