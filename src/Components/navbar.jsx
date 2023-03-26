@@ -7,10 +7,19 @@ import {
 	IconButton,
 	Card,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 export default function navbar() {
 	const [openNav, setOpenNav] = React.useState(false);
+	const [cookies, setCookies] = useCookies(["access_token"]);
+	const navigate = useNavigate();
+
+	const logout = () => {
+		setCookies("access_token", "");
+		window.localStorage.removeItem("userID");
+		navigate("/auth");
+	};
 
 	React.useEffect(() => {
 		window.addEventListener(
@@ -55,9 +64,15 @@ export default function navbar() {
 				color="blue-gray"
 				className="p-1 font-normal"
 			>
-				<Link to="/auth" className="flex items-center">
-					Login/Register
-				</Link>
+				{!cookies.access_token ? (
+					<Link to="/auth" className="flex items-center">
+						Login/Register
+					</Link>
+				) : (
+					<Button size="sm" onClick={logout}>
+						Log out
+					</Button>
+				)}
 			</Typography>
 		</ul>
 	);
