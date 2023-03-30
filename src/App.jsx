@@ -1,11 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/home";
-import Auth from "./Pages/auth";
-import CreateRecipe from "./Pages/createRecipe";
-import SavedRecipe from "./Pages/savedRecipe";
 import NavBar from "./Components/navbar";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
+import { lazy, Suspense } from "react";
+
+// import Login from "./Components/Login";
+// import Register from "./Components/Register";
+// import Auth from "./Pages/auth";
+// import CreateRecipe from "./Pages/createRecipe";
+// import SavedRecipe from "./Pages/savedRecipe";
+
+const SavedRecipe = lazy(() => import("./Pages/savedRecipe.jsx"));
+const CreateRecipe = lazy(() => import("./Pages/createRecipe.jsx"));
+const Auth = lazy(() => import("./Pages/auth.jsx"));
+const Login = lazy(() => import("./Components/Login.jsx"));
+const Register = lazy(() => import("./Components/Register.jsx"));
 
 export default function App() {
 	return (
@@ -14,11 +22,47 @@ export default function App() {
 				<NavBar />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/create-recipe" element={<CreateRecipe />} />
-					<Route path="/saved-recipe" element={<SavedRecipe />} />
-					<Route path="/auth" element={<Auth />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/signup" element={<Register />} />
+					<Route
+						path="/create-recipe"
+						element={
+							<Suspense fallback={<h2>Loading...</h2>}>
+								<CreateRecipe />
+							</Suspense>
+						}
+					/>
+
+					<Route
+						path="/saved-recipe"
+						element={
+							<Suspense fallback={<h2>Loading...</h2>}>
+								<SavedRecipe />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/auth"
+						element={
+							<Suspense fallback={<h2>Loading...</h2>}>
+								<Auth />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/login"
+						element={
+							<Suspense fallback={<h2>Loading...</h2>}>
+								<Login />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/signup"
+						element={
+							<Suspense fallback={<h2>Loading...</h2>}>
+								<Register />
+							</Suspense>
+						}
+					/>
 				</Routes>
 			</Router>
 		</div>
