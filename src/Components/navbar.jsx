@@ -48,32 +48,41 @@ export default function navbar() {
 					Create Recipe
 				</Link>
 			</Typography>
-			<Typography
-				as="li"
-				variant="small"
-				color="blue-gray"
-				className="p-1 font-normal"
-			>
-				<Link to="/saved-recipe" className="flex items-center">
-					Saved Recipe
-				</Link>
-			</Typography>
-			<Typography
-				as="li"
-				variant="small"
-				color="blue-gray"
-				className="p-1 font-normal"
-			>
-				{!cookies.access_token ? (
+			{!cookies.access_token ? (
+				<Typography
+					as="li"
+					variant="small"
+					color="blue-gray"
+					className="p-1 font-normal"
+				>
 					<Link to="/auth" className="flex items-center">
 						Login/Register
 					</Link>
-				) : (
-					<Button size="sm" onClick={logout}>
-						Log out
-					</Button>
-				)}
-			</Typography>
+				</Typography>
+			) : (
+				<>
+					<Typography
+						as="li"
+						variant="small"
+						color="blue-gray"
+						className="p-1 font-normal"
+					>
+						<Link to="/saved-recipe" className="flex items-center">
+							Saved Recipe
+						</Link>
+					</Typography>
+					<Typography
+						as="li"
+						variant="small"
+						color="blue-gray"
+						className="p-1 font-normal"
+					>
+						<Button size="sm" onClick={logout}>
+							Log out
+						</Button>
+					</Typography>
+				</>
+			)}
 		</ul>
 	);
 

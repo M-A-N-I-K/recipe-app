@@ -4,13 +4,17 @@ import {
 	CardBody,
 	CardFooter,
 	Typography,
-	IconButton,
 } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useGetUserId } from "../hooks/useGetUserId.jsx";
 
 const home = () => {
 	const [recipes, setRecipes] = useState([]);
+	const userID = useGetUserId();
+	const [savedRecipes, setSavedRecipes] = useState([]);
+	const [cookies, _] = useCookies(["access_token"]);
 	useEffect(() => {
 		const fetchRecipe = async () => {
 			try {
@@ -20,8 +24,38 @@ const home = () => {
 				console.error(err);
 			}
 		};
+		const fetchSavedRecipe = async () => {
+			try {
+				const response = await axios.get(
+					`http://localhost:3000/recipes/savedRecipes/ids/${userID}`
+				);
+				setSavedRecipes(response.data.savedRecipes);
+			} catch (err) {
+				console.error(err);
+			}
+		};
 		fetchRecipe();
+		if (cookies.access_token) {
+			fetchSavedRecipe();
+		}
 	}, []);
+	const saveRecipe = async (recipeID) => {
+		try {
+			const response = await axios.put(
+				"http://localhost:3000/recipes",
+				{
+					recipeID,
+					userID,
+				},
+				{ headers: { authorization: cookies.access_token } }
+			);
+			setSavedRecipes(response.data.savedRecipes);
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	const isRecipeSaved = (Id) => savedRecipes.includes(Id);
 	return (
 		<div className="relative grid xl:grid-cols-3 l:grid-cols-3 md:grid-cols-2 s:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10">
 			{recipes.map((recipe) => {
@@ -44,14 +78,15 @@ const home = () => {
 								className="mb-2"
 							>
 								{recipe.name}
-								<IconButton
-									variant="outlined"
-									size="sm"
-									className="ml-20"
-									ripple={true}
+								<button
+									className="text-xs bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded ml-10"
+									disabled={isRecipeSaved(recipe._id)}
+									onClick={() => {
+										saveRecipe(recipe._id);
+									}}
 								>
-									<i className="fa fa-bookmark" />
-								</IconButton>
+									{isRecipeSaved(recipe._id) ? "Saved" : "Save"}
+								</button>
 							</Typography>
 							<Typography
 								color="blue"

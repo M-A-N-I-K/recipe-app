@@ -7,12 +7,14 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useGetUserId } from "../hooks/useGetUserId";
 
 export default function createRecipe() {
 	const navigate = useNavigate();
 	const userID = useGetUserId();
+	const [cookies, _] = useCookies(["access_token"]);
 	const [recipe, setRecipe] = useState({
 		name: "",
 		ingredients: [],
@@ -41,7 +43,9 @@ export default function createRecipe() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			await axios.post("http://localhost:3000/recipes", recipe);
+			await axios.post("http://localhost:3000/recipes", recipe, {
+				headers: { authorization: cookies.access_token },
+			});
 			alert("Recipe Created!");
 			navigate("/");
 		} catch (err) {

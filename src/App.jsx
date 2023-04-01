@@ -3,12 +3,6 @@ import Home from "./Pages/home";
 import NavBar from "./Components/navbar";
 import { lazy, Suspense } from "react";
 
-// import Login from "./Components/Login";
-// import Register from "./Components/Register";
-// import Auth from "./Pages/auth";
-// import CreateRecipe from "./Pages/createRecipe";
-// import SavedRecipe from "./Pages/savedRecipe";
-
 const SavedRecipe = lazy(() => import("./Pages/savedRecipe.jsx"));
 const CreateRecipe = lazy(() => import("./Pages/createRecipe.jsx"));
 const Auth = lazy(() => import("./Pages/auth.jsx"));
