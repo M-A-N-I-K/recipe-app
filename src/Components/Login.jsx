@@ -14,10 +14,13 @@ export default function login() {
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await axios.post("http://localhost:3000/auth/login", {
-				username,
-				password,
-			});
+			const response = await axios.post(
+				"https://recipe-app-21hr.onrender.com/login",
+				{
+					username,
+					password,
+				}
+			);
 			setCookies("access_token", response.data.token);
 			window.localStorage.setItem("userID", response.data.userID);
 			navigate("/");

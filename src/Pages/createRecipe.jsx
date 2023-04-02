@@ -43,9 +43,13 @@ export default function createRecipe() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			await axios.post("http://localhost:3000/recipes", recipe, {
-				headers: { authorization: cookies.access_token },
-			});
+			await axios.post(
+				"https://recipe-app-21hr.onrender.com/recipes",
+				recipe,
+				{
+					headers: { authorization: cookies.access_token },
+				}
+			);
 			alert("Recipe Created!");
 			navigate("/");
 		} catch (err) {

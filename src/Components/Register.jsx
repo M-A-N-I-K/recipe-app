@@ -10,7 +10,7 @@ export default function register() {
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			await axios.post("http://localhost:3000/auth/register", {
+			await axios.post("https://recipe-app-21hr.onrender.com/register", {
 				username,
 				password,
 			});
