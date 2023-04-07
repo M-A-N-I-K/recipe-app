@@ -10,12 +10,15 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useGetUserId } from "../hooks/useGetUserId";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function createRecipe() {
 	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	const navigate = useNavigate();
 	const userID = useGetUserId();
 	const [cookies, _] = useCookies(["access_token"]);
+
 	const [recipe, setRecipe] = useState({
 		name: "",
 		ingredients: [],
@@ -47,7 +50,6 @@ export default function createRecipe() {
 			await axios.post(`${BaseUrl}/recipes`, recipe, {
 				headers: { authorization: cookies.access_token },
 			});
-			alert("Recipe Created!");
 			navigate("/");
 		} catch (err) {
 			console.error(err);

@@ -1,12 +1,14 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function register() {
 	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -15,7 +17,16 @@ export default function register() {
 				username,
 				password,
 			});
-			alert("Registration Completed! Now Login.");
+			toast.success("User registered Successfully!", {
+				position: "bottom-center",
+				autoClose: 3000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+			});
 		} catch (err) {
 			console.error(err);
 		}
@@ -23,6 +34,18 @@ export default function register() {
 
 	return (
 		<div className="flex justify-center p-10">
+			<ToastContainer
+				position="bottom-center"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 			<Card color="transparent" shadow={false}>
 				<Typography variant="h4" color="blue-gray">
 					Sign Up
