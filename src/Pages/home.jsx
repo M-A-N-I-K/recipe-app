@@ -15,12 +15,11 @@ const home = () => {
 	const userID = useGetUserId();
 	const [savedRecipes, setSavedRecipes] = useState([]);
 	const [cookies, _] = useCookies(["access_token"]);
+	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	useEffect(() => {
 		const fetchRecipe = async () => {
 			try {
-				const response = await axios.get(
-					"https://recipe-app-21hr.onrender.com/recipes"
-				);
+				const response = await axios.get(`${BaseUrl}/recipes`);
 				setRecipes(response.data);
 			} catch (err) {
 				console.error(err);
@@ -29,7 +28,7 @@ const home = () => {
 		const fetchSavedRecipe = async () => {
 			try {
 				const response = await axios.get(
-					`https://recipe-app-21hr.onrender.com/recipes/savedRecipes/ids/${userID}`
+					`${BaseUrl}/recipes/savedRecipes/ids/${userID}`
 				);
 				setSavedRecipes(response.data.savedRecipes);
 			} catch (err) {
@@ -44,7 +43,7 @@ const home = () => {
 	const saveRecipe = async (recipeID) => {
 		try {
 			const response = await axios.put(
-				"https://recipe-app-21hr.onrender.com/recipes",
+				`${BaseUrl}/recipes`,
 				{
 					recipeID,
 					userID,

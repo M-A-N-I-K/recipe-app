@@ -13,11 +13,12 @@ import { useGetUserId } from "../hooks/useGetUserId.jsx";
 const savedRecipes = () => {
 	const [savedRecipes, setSavedRecipes] = useState([]);
 	const userID = useGetUserId();
+	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	useEffect(() => {
 		const fetchSavedRecipe = async () => {
 			try {
 				const response = await axios.get(
-					`https://recipe-app-21hr.onrender.com/recipes/savedRecipes/${userID}`
+					`${BaseUrl}/recipes/savedRecipes/${userID}`
 				);
 				setSavedRecipes(response.data.savedRecipes);
 			} catch (err) {

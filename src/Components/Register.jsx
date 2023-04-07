@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function register() {
+	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			await axios.post("https://recipe-app-21hr.onrender.com/register", {
+			await axios.post(`${BaseUrl}/auth/register`, {
 				username,
 				password,
 			});

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function login() {
+	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [, setCookies] = useCookies(["access_token"]);
@@ -14,13 +15,10 @@ export default function login() {
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await axios.post(
-				"https://recipe-app-21hr.onrender.com/login",
-				{
-					username,
-					password,
-				}
-			);
+			const response = await axios.post(`${BaseUrl}/auth/login`, {
+				username,
+				password,
+			});
 			setCookies("access_token", response.data.token);
 			window.localStorage.setItem("userID", response.data.userID);
 			navigate("/");

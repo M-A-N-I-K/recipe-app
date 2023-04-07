@@ -12,6 +12,7 @@ import axios from "axios";
 import { useGetUserId } from "../hooks/useGetUserId";
 
 export default function createRecipe() {
+	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
 	const navigate = useNavigate();
 	const userID = useGetUserId();
 	const [cookies, _] = useCookies(["access_token"]);
@@ -43,13 +44,9 @@ export default function createRecipe() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			await axios.post(
-				"https://recipe-app-21hr.onrender.com/recipes",
-				recipe,
-				{
-					headers: { authorization: cookies.access_token },
-				}
-			);
+			await axios.post(`${BaseUrl}/recipes`, recipe, {
+				headers: { authorization: cookies.access_token },
+			});
 			alert("Recipe Created!");
 			navigate("/");
 		} catch (err) {
