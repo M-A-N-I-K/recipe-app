@@ -32,6 +32,9 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
 </p>
+
+## Screenshots 
+
 ![App Screenshot](https://img2link.com/images/2023/04/28/53648e57dcb69152b6ddff09c1effa68.jpg)
 ![App Screenshot](https://img2link.com/images/2023/04/28/53648e57dcb69152b6ddff09c1effa68.jpg)
 ![App Screenshot](https://img2link.com/images/2023/04/28/53648e57dcb69152b6ddff09c1effa68.jpg)
