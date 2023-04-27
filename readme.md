@@ -6,7 +6,13 @@
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">The MERN recipe app is a full-stack web application that enables users to create, save, and display recipes with the added feature of user authentication. Built using the MERN stack, which comprises MongoDB, Express, React, and Node.js, the application provides a seamless and efficient way for users to manage and store their recipes.
+
+The app is designed to provide a personalized experience to its users, who can create their own profiles and save recipes to their account. With user authentication in place, users can be assured of the security and privacy of their data, which is stored in a MongoDB database.
+
+The front-end of the application is built using React, providing a dynamic and interactive user interface that is both intuitive and easy to use. Users can add their own recipes using a simple and user-friendly form. The back-end of the application is powered by Node.js and Express, which facilitate the creation of the RESTful API that the application uses to communicate with the database.
+
+Overall, the MERN recipe app offers a seamless and efficient solution for managing and organizing recipes, while also providing a personalized and secure experience for users.<a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
