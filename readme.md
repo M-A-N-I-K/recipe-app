@@ -61,7 +61,7 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Major frameworks/libraries used to bootstrap this project :-
 
 * [![React][React.js]][https://react.dev/]
 * [![Material Tailwind][material-taiwind.com]][https://www.material-tailwind.com/]
