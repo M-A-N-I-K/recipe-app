@@ -1,5 +1,5 @@
 import { Card, Typography, Input, Button } from "@material-tailwind/react";
-import { useState } from "react";
+import react, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
@@ -19,7 +19,9 @@ export default function login() {
 				password,
 			});
 			setCookies("access_token", response.data.token);
-			window.localStorage.setItem("userID", response.data.userID);
+			if (typeof window !== "undefined") {
+				window.localStorage.setItem("userID", response.data.userID);
+			}
 			navigate("/");
 		} catch (err) {
 			console.error(err);
