@@ -59,6 +59,16 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 
 * Easy Deployment: The app is deployed to a cloud-based platform that is netlify for frontend and render for backend , which provides scalability and accessibility.
 
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* [![React][React.js]][https://react.dev/]
+* [![Material Tailwind][material-taiwind.com]][https://www.material-tailwind.com/]
+* [![NodeJs][Node.js]][https://nodejs.org/en]
+* [![MongoDB][mongodb.com]][https://www.mongodb.com/]
+* [![ExpressJs][expressjs.com]][https://expressjs.com/]
+
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
