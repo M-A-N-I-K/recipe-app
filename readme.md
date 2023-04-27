@@ -63,16 +63,16 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/M-A-N-I-K/recipe-app
 
 # Go into the repository
-$ cd electron-markdownify
+$ cd Client/recipe-app
 
 # Install dependencies
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
 > **Note**
