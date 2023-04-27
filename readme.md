@@ -55,7 +55,7 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 
 * User Feedback: The app provides users with feedback on their actions, such as successfully saving or deleting a recipe.
 
-* Easy Deployment: The app can be easily deployed to a cloud-based platform, such as Heroku or AWS, for scalability and accessibility.
+* Easy Deployment: The app is deployed to a cloud-based platform that is netlify for frontend and render for backend , which provides scalability and accessibility.
 
 ## How To Use
 
