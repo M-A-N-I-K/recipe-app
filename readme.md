@@ -59,15 +59,11 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 
 * Easy Deployment: The app is deployed to a cloud-based platform that is netlify for frontend and render for backend , which provides scalability and accessibility.
 
-### Built With
+## Tech Stack
 
-Major frameworks/libraries used to bootstrap this project :-
+**Client:** React, TailwindCSS , Material-Tailwind
 
-* [![React][React.js]][https://react.dev/]
-* [![Material Tailwind][material-taiwind.com]][https://www.material-tailwind.com/]
-* [![NodeJs][Node.js]][https://nodejs.org/en]
-* [![MongoDB][mongodb.com]][https://www.mongodb.com/]
-* [![ExpressJs][expressjs.com]][https://expressjs.com/]
+**Server:** Node.js, Express.js , MongoDB
 
 ## How To Use
 
