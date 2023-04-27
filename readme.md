@@ -41,23 +41,21 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+* User Authentication: The app provides secure user authentication, allowing users to create their own profiles and access their saved recipes.
+
+* Recipe Management: Users can create, save, and display recipes with the ability to search and filter recipes by keywords, category, or cuisine.
+
+* Interactive User Interface: The app's front-end is built using React, which provides an interactive and responsive user interface that is both intuitive and easy to use.
+
+* RESTful API: The back-end is powered by Node.js and Express, which facilitate the creation of a RESTful API that the application uses to communicate with the database.
+
+* MongoDB Database: The app uses a MongoDB database to store user and recipe data, ensuring efficient and scalable management of data.
+
+* Form Validation: The app provides form validation to ensure the accuracy and completeness of data entered by users.
+
+* User Feedback: The app provides users with feedback on their actions, such as successfully saving or deleting a recipe.
+
+* Easy Deployment: The app can be easily deployed to a cloud-based platform, such as Heroku or AWS, for scalability and accessibility.
 
 ## How To Use
 
