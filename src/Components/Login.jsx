@@ -1,8 +1,7 @@
 import { Card, Typography, Input, Button } from "@material-tailwind/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 export default function login() {
