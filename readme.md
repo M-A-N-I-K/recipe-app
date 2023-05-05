@@ -31,13 +31,15 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+## Screenshots 
+
+![App Screenshot](https://img2link.com/images/2023/04/28/73657391db10781e3656b604c13c33bc.jpg)
+![App Screenshot](https://img2link.com/images/2023/04/28/6cc2ec3b6cca6ac095d8f4096f151555.jpg)
+![App Screenshot](https://img2link.com/images/2023/04/28/53648e57dcb69152b6ddff09c1effa68.jpg)
+![App Screenshot](https://img2link.com/images/2023/04/28/7e7db584656229cdc422274cac8b1eca.jpg)
+![App Screenshot](https://img2link.com/images/2023/04/28/bac05a24ccb284ea8d85bdcb4903d32d.jpg)
 
 ## Key Features
 
@@ -56,6 +58,12 @@ Overall, the MERN recipe app offers a seamless and efficient solution for managi
 * User Feedback: The app provides users with feedback on their actions, such as successfully saving or deleting a recipe.
 
 * Easy Deployment: The app is deployed to a cloud-based platform that is netlify for frontend and render for backend , which provides scalability and accessibility.
+
+## Tech Stack
+
+**Client:** React, TailwindCSS , Material-Tailwind
+
+**Server:** Node.js, Express.js , MongoDB
 
 ## How To Use
 
