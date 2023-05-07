@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/home";
 import NavBar from "./Components/navbar";
 import { lazy, Suspense } from "react";
+import Spinner from "./Components/spinner";
 
 const SavedRecipe = lazy(() => import("./Pages/savedRecipe.jsx"));
 const CreateRecipe = lazy(() => import("./Pages/createRecipe.jsx"));
@@ -12,14 +13,21 @@ const Register = lazy(() => import("./Components/Register.jsx"));
 export default function App() {
 	return (
 		<div>
-			<Router>
+			<HashRouter>
 				<NavBar />
 				<Routes>
-					<Route path="/" element={<Home />} />
+					<Route
+						path="/"
+						element={
+							<Suspense fallback={<Spinner />}>
+								<Home />
+							</Suspense>
+						}
+					/>
 					<Route
 						path="/create-recipe"
 						element={
-							<Suspense fallback={<h2>Loading...</h2>}>
+							<Suspense fallback={<Spinner />}>
 								<CreateRecipe />
 							</Suspense>
 						}
@@ -28,7 +36,7 @@ export default function App() {
 					<Route
 						path="/saved-recipe"
 						element={
-							<Suspense fallback={<h2>Loading...</h2>}>
+							<Suspense fallback={<Spinner />}>
 								<SavedRecipe />
 							</Suspense>
 						}
@@ -36,7 +44,7 @@ export default function App() {
 					<Route
 						path="/auth"
 						element={
-							<Suspense fallback={<h2>Loading...</h2>}>
+							<Suspense fallback={<Spinner />}>
 								<Auth />
 							</Suspense>
 						}
@@ -44,7 +52,7 @@ export default function App() {
 					<Route
 						path="/login"
 						element={
-							<Suspense fallback={<h2>Loading...</h2>}>
+							<Suspense fallback={<Spinner />}>
 								<Login />
 							</Suspense>
 						}
@@ -52,13 +60,13 @@ export default function App() {
 					<Route
 						path="/signup"
 						element={
-							<Suspense fallback={<h2>Loading...</h2>}>
+							<Suspense fallback={<Spinner />}>
 								<Register />
 							</Suspense>
 						}
 					/>
 				</Routes>
-			</Router>
+			</HashRouter>
 		</div>
 	);
 }
