@@ -41,6 +41,7 @@ export default function login() {
 						<Input
 							size="lg"
 							label="Username"
+
 							value={username}
 							onChange={(event) => setUsername(event.target.value)}
 						/>
@@ -52,7 +53,7 @@ export default function login() {
 							onChange={(event) => setPassword(event.target.value)}
 						/>
 					</div>
-					<Button className="mt-6" fullWidth onClick={onSubmit}>
+					<Button className="mt-6 bg-[#E45E9D] hover:shadow-pink-200" fullWidth onClick={onSubmit}>
 						Sign In
 					</Button>
 					<Typography
@@ -62,7 +63,7 @@ export default function login() {
 						Don't have an account?{" "}
 						<Link
 							to="/signup"
-							className="font-medium text-blue-500 transition-colors hover:text-blue-700"
+							className="font-medium text-[#E45E9D] transition-colors hover:text-pink-800"
 						>
 							Sign Up
 						</Link>

@@ -70,7 +70,7 @@ export default function register() {
 							onChange={(event) => setPassword(event.target.value)}
 						/>
 					</div>
-					<Button className="mt-6" fullWidth onClick={onSubmit}>
+					<Button className="mt-6 bg-[#E45E9D] hover:shadow-pink-200" fullWidth onClick={onSubmit}>
 						Register
 					</Button>
 					<Typography
@@ -80,7 +80,7 @@ export default function register() {
 						Already have an account?{" "}
 						<Link
 							to="/login"
-							className="font-medium text-blue-500 transition-colors hover:text-blue-700"
+							className="font-medium text-[#E45E9D] transition-colors hover:text-pink-800"
 						>
 							Sign In
 						</Link>

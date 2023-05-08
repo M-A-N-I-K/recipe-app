@@ -10,8 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useGetUserId } from "../hooks/useGetUserId";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function createRecipe() {
 	const BaseUrl = "https://recipe-app-t7qp.onrender.com";
@@ -84,7 +82,7 @@ export default function createRecipe() {
 								}}
 							/>
 						))}
-						<Button variant="outlined" onClick={addIngredient}>
+						<Button variant="outlined" className="bg-[#E45E9D] hover:shadow-pink-200 text-white border-white" onClick={addIngredient}>
 							Add Ingredient
 						</Button>
 						<Textarea
@@ -106,7 +104,7 @@ export default function createRecipe() {
 							onChange={handleOnChange}
 						/>
 					</div>
-					<Button className="mt-6" fullWidth onClick={handleSubmit}>
+					<Button className="mt-6 bg-[#E45E9D] hover:shadow-pink-200" fullWidth onClick={handleSubmit}>
 						Save Recipe
 					</Button>
 				</form>
