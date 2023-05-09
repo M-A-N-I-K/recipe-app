@@ -29,11 +29,11 @@ const savedRecipes = () => {
 	}, []);
 
 	return (
-		<div className="relative grid xl:grid-cols-3 l:grid-cols-3 md:grid-cols-2 s:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10">
+		<div className="relative grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10">
 			{savedRecipes?.map((recipe) => {
 				return (
 					<Card
-						className="w-96 bg-[#f7ecec] s:w-48 flex justify-between"
+						className="w-96 bg-[#f7ecec] flex justify-between"
 						key={recipe._id}
 					>
 						<CardHeader floated={false} className="group relative transform transition duration-500 hover:scale-110 hover:cursor-pointer h-[20rem] object-fill">
@@ -50,6 +50,13 @@ const savedRecipes = () => {
 
 						</CardHeader>
 						<CardBody className="text-center">
+							<Typography
+								variant="h4"
+								color="blue-gray"
+							>
+								{recipe.name}
+
+							</Typography>
 							<Typography
 								color="blue"
 								className="font-medium text-black"

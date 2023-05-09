@@ -70,11 +70,11 @@ const home = () => {
 
 	const isRecipeSaved = (Id) => savedRecipes?.includes(Id);
 	return (
-		<div className="relative grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 s:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10 ">
+		<div className="relative grid 2xl:grid-cols-3 xl:grid-cols-3  md:grid-cols-2 s:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10 ">
 			{recipes.map((recipe) => {
 				return (
 					<Card
-						className="bg-[#f7ecec] 2xl:w-96 xl:w-96 lg:w-5/6 s:w-48 md:w-80 flex justify-between"
+						className="bg-[#f7ecec] w-[90vw] sm:w-96  flex justify-between"
 						key={recipe._id}
 					>
 						<ToastContainer
