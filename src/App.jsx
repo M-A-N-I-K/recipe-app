@@ -6,7 +6,6 @@ import Spinner from "./Components/spinner";
 
 const SavedRecipe = lazy(() => import("./Pages/savedRecipe.jsx"));
 const CreateRecipe = lazy(() => import("./Pages/createRecipe.jsx"));
-const Auth = lazy(() => import("./Pages/auth.jsx"));
 const Login = lazy(() => import("./Components/Login.jsx"));
 const Register = lazy(() => import("./Components/Register.jsx"));
 
@@ -17,7 +16,7 @@ export default function App() {
 				<NavBar />
 				<Routes>
 					<Route
-						path="/"
+						path="/home"
 						element={
 							<Suspense fallback={<Spinner />}>
 								<Home />
@@ -42,15 +41,7 @@ export default function App() {
 						}
 					/>
 					<Route
-						path="/auth"
-						element={
-							<Suspense fallback={<Spinner />}>
-								<Auth />
-							</Suspense>
-						}
-					/>
-					<Route
-						path="/login"
+						path="/"
 						element={
 							<Suspense fallback={<Spinner />}>
 								<Login />

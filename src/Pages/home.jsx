@@ -70,7 +70,7 @@ const home = () => {
 
 	const isRecipeSaved = (Id) => savedRecipes?.includes(Id);
 	return (
-		<div className="relative grid 2xl:grid-cols-3 xl:grid-cols-3  md:grid-cols-2 s:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10 ">
+		<div className="relative grid 2xl:grid-cols-3 xl:grid-cols-3  md:grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-10 justify-center p-10 ">
 			{recipes.map((recipe) => {
 				return (
 					<Card
@@ -94,7 +94,7 @@ const home = () => {
 							<div className="absolute -bottom-70 group-hover:bottom-2 right-2 left-2 transition-all duration-600 bg-white dark:bg-slate-900 p-4 rounded shadow dark:shadow-gray-700">
 								<Typography
 									color="blue"
-									className="font-medium opacity-100"
+									className="font-normal lg:font-medium opacity-100"
 									textGradient
 								>
 									{recipe.instructions}

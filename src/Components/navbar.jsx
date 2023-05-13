@@ -18,7 +18,7 @@ export default function navbar() {
 	const logout = () => {
 		setCookies("access_token", "");
 		window.localStorage.removeItem("userID");
-		navigate("/auth");
+		navigate("/");
 	};
 
 	React.useEffect(() => {
@@ -35,7 +35,7 @@ export default function navbar() {
 				variant="small"
 				className="p-1 font-normal"
 			>
-				<Link to="/">Home</Link>
+				<Link to="/home">Home</Link>
 			</Typography>
 			<Typography
 				as="li"
@@ -52,7 +52,7 @@ export default function navbar() {
 					variant="small"
 					className="p-1 font-normal"
 				>
-					<Link to="/auth" className="flex items-center">
+					<Link to="/" className="flex items-center">
 						Login/Register
 					</Link>
 				</Typography>
